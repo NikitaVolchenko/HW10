@@ -11,7 +11,7 @@ import java.util.List;
 public class FileWork1 {
     public List<String> readFromFile(String fileName) throws IOException {
         List<String> lines = new ArrayList<>();
-        try(BufferedReader in = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader in = new BufferedReader(new FileReader(fileName))) {
             String value = in.readLine();
             while (value != null) {
                 StringWork stringWork = new StringWork();
@@ -19,8 +19,7 @@ public class FileWork1 {
                 lines.add(value);
                 value = in.readLine();
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return lines;
@@ -28,10 +27,9 @@ public class FileWork1 {
 
     public void writeToFile(List<String> lines) throws IOException {
         try {
-            Path file = Paths.get("D:\\Users\\user\\IdeaProjects\\10\\src\\fileForWrite.txt");
+            Path file = Paths.get("D:\\Users\\user\\IdeaProjects\\10\\src\\fileForWrite1.txt");
             Files.write(file, lines, StandardCharsets.UTF_8);
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

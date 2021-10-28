@@ -1,4 +1,6 @@
-public class StringWork{
+import java.util.List;
+
+public class StringWork {
 
     public int countCharacters(String string) {
         int count = 0;
